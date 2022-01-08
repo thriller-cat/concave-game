@@ -21,10 +21,6 @@
       </div>
     </div>
     <script>
-      var maxWidth = innerWidth;
-      var maxHeight = innerHeight;
-      document.getElementById("unity-canvas").style.width = maxWidth + "px";
-      document.getElementById("unity-canvas").style.height = maxHeight + "px";
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/WebGL.loader.js";
       var config = {
@@ -61,8 +57,8 @@
           mobileWarning.style.display = "none";
         }, 5000);
       } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = document.body.clientWidth + "px";
+        canvas.style.height = innerHeight - 4 + "px";
       }
       loadingBar.style.display = "block";
 
