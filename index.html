@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
+    <div id="unity-container" class="unity-desktop" style="display: table; width: 100%; height: 100%;">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -23,8 +23,8 @@
     <script>
       var maxWidth = innerWidth;
       var maxHeight = innerHeight;
-      document.getElementById("unityContainer").style.width = maxWidth + "px";
-      document.getElementById("unityContainer").style.height = maxHeight + "px";
+      document.getElementById("unity-container").style.width = maxWidth + "px";
+      document.getElementById("unity-container").style.height = maxHeight + "px";
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/WebGL.loader.js";
       var config = {
