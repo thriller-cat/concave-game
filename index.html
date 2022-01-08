@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
+    <div id="unity-container" class="unity-desktop" style="display: table; width: 100%; height: 100%;">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -19,13 +19,12 @@
       <div id="unity-mobile-warning">
         WebGL builds are not supported on mobile devices.
       </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">New Unity Project</div>
-      </div>
     </div>
     <script>
+      var maxWidth = innerWidth;
+      var maxHeight = innerHeight;
+      document.getElementById("unity-container").style.width = maxWidth + "px";
+      document.getElementById("unity-container").style.height = maxHeight + "px";
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/WebGL.loader.js";
       var config = {
