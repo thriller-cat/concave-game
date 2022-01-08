@@ -22,7 +22,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">New Unity Project</div>
+        <div id="unity-build-title">Concave</div>
       </div>
     </div>
     <script>
@@ -62,8 +62,8 @@
           mobileWarning.style.display = "none";
         }, 5000);
       } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = document.body.clientWidth - 10 + "px";
+        canvas.style.height = innerHeight - 50 + "px";
       }
       loadingBar.style.display = "block";
 
@@ -77,7 +77,7 @@
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
           };
-          unityInstance.SetFullscreen(1);
+          setTimeout(unityInstance.SetFullscreen(1), 500)
         }).catch((message) => {
           alert(message);
         });
